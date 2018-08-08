@@ -2270,7 +2270,7 @@ int main(int argc, const char * const argv[])
                 if (strncasecmp(optarg, "ALL", 3) == 0) {
                     meth = SSLv23_client_method();
                 } else if (strncasecmp(optarg, "SSL2", 4) == 0) {
-                    meth = SSLv2_client_method();
+                    meth = SSLv3_client_method();
                 } else if (strncasecmp(optarg, "SSL3", 4) == 0) {
                     meth = SSLv3_client_method();
                 } else if (strncasecmp(optarg, "TLS1", 4) == 0) {
