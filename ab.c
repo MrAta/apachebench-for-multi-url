@@ -383,8 +383,10 @@ static int parse_url(char *url);
 char url_buf[URL_LENGTH];
 char *url_lists[LIST_LINES];
 int line, gline;
-int mode = 0; // 0:Normal 1:Multi
+int mode = 1; // 0:Normal 1:Multi
 int current_req = 0;
+int req_counter = 0;
+
 int turncnt = 1;
 int current_con = 0;
 char url_list_name[URL_LENGTH];/* url list name */
@@ -1673,7 +1675,7 @@ static void test(void)
 		if ( mode == 0 ) {
 			current_req = 0;
 		} else {
-			current_req = rand() % line;
+			current_req = (req_counter++) % line;
 		}
 
 		parse_url(apr_pstrdup(cntxt, url_lists[current_req]));
