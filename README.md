@@ -8,9 +8,12 @@ Multiple URL requests for ApacheBench. You can set URL list with '-L filename'.
 
 
 ### Compile ab-multi with random url patch
-
+In ubuntu install apache2*
 ```
-gcc -I /usr/include/apr-1.0 -I /usr/include/apache2 ab.c -o ab  -lm -lapr-1 -laprutil-1
+apt-get install apache2*
+```
+
+```gcc -I /usr/include/apr-1.0 -I /usr/include/apache2 ab.c -o ab  -lm -lapr-1 -laprutil-1 -I /usr/local/ssl/include -L /usr/local/ssl/lib -lssl -lcrypto -Wall
 ```
 
 ### Example Usage
